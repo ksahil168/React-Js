@@ -1,14 +1,19 @@
-import React, { useState } from "react";
+//import React, { useState } from "react";
 
-export default function About() {
-  const [myStyle, setMyStyle] = useState({
+export default function About(props) {
+  /*   const [myStyle, setMyStyle] = useState({
     color: "black",
     backgroundColor: "white",
-  });
+  }); */
 
-  const [btntext, setBtnText] = useState("Enable Dark Mode");
+  let myStyle = {
+    color: props.mode === "dark" ? "white" : "black",
+    backgroundColor: props.mode === "dark" ? "black" : "white",
+  };
 
-  const toggleStyle = () => {
+  /*  const [btntext, setBtnText] = useState("Enable Dark Mode"); */
+
+  /*   const toggleStyle = () => {
     if (myStyle.color === "black") {
       setMyStyle({
         color: "white",
@@ -23,7 +28,7 @@ export default function About() {
       });
       setBtnText("Enable Dark Mode");
     }
-  };
+  }; */
 
   return (
     <div className="container" style={myStyle}>
@@ -40,7 +45,7 @@ export default function About() {
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Accordion Item #1
+              Introduction to Online Text Editor
             </button>
           </h2>
           <div
@@ -49,14 +54,15 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the first item's accordion body.</strong> It is
-              shown by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>Online text editors</strong> have become integral tools in
+              the digital age, providing users with the flexibility to create,
+              edit, and collaborate on documents seamlessly. Unlike traditional
+              desktop applications, online text editors operate through web
+              browsers, allowing users to access their work from any device with
+              internet connectivity. These platforms often boast a range of
+              features, from real-time collaboration and version history to
+              cloud storage, making them ideal for individuals, students, and
+              professionals alike.
             </div>
           </div>
         </div>
@@ -71,7 +77,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Accordion Item #2
+              Key Features of Online Text Editors
             </button>
           </h2>
           <div
@@ -80,14 +86,17 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the second item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>Online text editors</strong> offer a myriad of features
+              that enhance productivity and streamline the writing process.
+              Real-time collaboration is a standout feature, enabling multiple
+              users to work on a document simultaneously, fostering teamwork and
+              eliminating the need for constant file sharing. Another
+              significant advantage is the automatic cloud saving, which ensures
+              that work is securely stored and easily accessible from any
+              location. Additionally, many online text editors incorporate
+              advanced formatting options, spell-check, and the ability to
+              export documents in various file formats, catering to diverse user
+              needs.
             </div>
           </div>
         </div>
@@ -102,7 +111,7 @@ export default function About() {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              Accordion Item #3
+              Popular Online Text Editors
             </button>
           </h2>
           <div
@@ -111,19 +120,24 @@ export default function About() {
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body" style={myStyle}>
-              <strong>This is the third item's accordion body.</strong> It is
-              hidden by default, until the collapse plugin adds the appropriate
-              classes that we use to style each element. These classes control
-              the overall appearance, as well as the showing and hiding via CSS
-              transitions. You can modify any of this with custom CSS or
-              overriding our default variables. It's also worth noting that just
-              about any HTML can go within the <code>.accordion-body</code>,
-              though the transition does limit overflow.
+              <strong>Several online text editors</strong> have gained
+              popularity for their user-friendly interfaces and robust
+              functionality. Google Docs, a part of the Google Workspace suite,
+              is renowned for its collaborative features, seamless integration
+              with other Google services, and accessibility across different
+              platforms. Microsoft Word Online, an extension of the familiar
+              desktop application, offers a comprehensive set of tools and is
+              linked to OneDrive for efficient cloud storage. Other notable
+              mentions include Zoho Writer, which combines sophisticated
+              features with a clean interface, and Dropbox Paper, focusing on
+              simplicity and effective collaboration. As technology continues to
+              evolve, online text editors are likely to remain pivotal tools in
+              the realm of digital communication and document creation.
             </div>
           </div>
         </div>
       </div>
-      <div className="conatiner">
+      {/*   <div className="conatiner">
         <button
           onClick={toggleStyle}
           type="button"
@@ -131,7 +145,7 @@ export default function About() {
         >
           {btntext}
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }
